@@ -2034,6 +2034,19 @@ mongodb@^3.6.2:
   optionalDependencies:
     saslprep "^1.0.0"
 
+mongooo@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/mongooo/-/mongooo-0.1.0.tgz#2c41956438b89155fe8c735309da47c2a20269b1"
+  integrity sha512-jqyXeROVCCkBuixhvXdtVaStvIScJRGaG9XaVzsEJNA8nANFbCcJuU2yDlTluH0rivEcN+IMthIh5r1Eb7TFoA==
+  dependencies:
+    "@babel/cli" "^7.11.6"
+    "@babel/core" "^7.11.6"
+    "@babel/node" "^7.10.5"
+    "@babel/preset-env" "^7.11.5"
+    compression "^1.7.4"
+    express "^4.17.1"
+    mongodb "^3.6.2"
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
