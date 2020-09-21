@@ -1,11 +1,11 @@
-import compression from 'compression';
 import express from 'express';
 import cors from 'cors';
+
+import sec from './env/index.js';
 
 const app = express();
 
 app.use(express.json());
-app.use(compression());
 app.use(cors());
 
-app.listen(1200);
+app.listen(sec.PORT);
