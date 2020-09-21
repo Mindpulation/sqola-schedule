@@ -1,6 +1,6 @@
 {
   "name": "sqola-schedule",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "repository": "https://github.com/Mindpulation/sqola-schedule.git",
   "author": "Reza Andriansyah <technoboth@gmail.com>",
