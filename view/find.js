@@ -6,4 +6,5 @@ const app = express.Router();
 
 app.get('/:idGuru', getDataWithIdGuru);
 
+
 export default app;
