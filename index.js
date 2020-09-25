@@ -16,7 +16,7 @@ app.use('/api/find', find);
 app.use('/api/insert', insert);
 app.use('/api/update', update);
 
-app.all("*", (req, res)=>{res.send({res:"Fuck you!"})});
+app.all("*", (req, res)=>{res.send({res:"Fuck you!"}).status(304)});
 
 const serv = http.createServer(app);
 serv.listen(sec.PORT);
