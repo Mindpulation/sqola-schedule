@@ -329,10 +329,10 @@ mongodb@^3.6.2:
   optionalDependencies:
     saslprep "^1.0.0"
 
-mongooo@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/mongooo/-/mongooo-1.0.1.tgz#1b1c5ece760774f4bda8488f372d36ca427c8751"
-  integrity sha512-4UkqPqohWQvcfMMNB7yqCQzwYXFCH99cz8fYpmH7kZOHDZE7CrfTqSr2/x3Dn7lbQn0O8S+Rgoe9/uZIGGbSrw==
+mongooo@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/mongooo/-/mongooo-1.1.3.tgz#a55e3931a5db05c6713b62cb8192823e32fe3c2b"
+  integrity sha512-p3oCYjoR5lQhQibpeUhjJlfwfAUxdZLn9WyHddbPIRa6wMm3zAmkVnUIj41SU2TK3N1+rS4wcOOBZJUJnlmbRA==
   dependencies:
     mongodb "^3.6.2"
 

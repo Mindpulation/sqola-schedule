@@ -5,4 +5,10 @@ const schemaFindListSchedule = joi.object().keys({
   sta : joi.boolean().required()
 });
 
-module.exports = {schemaFindListSchedule}
+const schemaInsertSchedule = joi.object().keys({
+  idGuru : joi.number().required(),
+  desc: joi.string().required(),
+  member: joi.array().required()
+});
+
+module.exports = {schemaFindListSchedule, schemaInsertSchedule}

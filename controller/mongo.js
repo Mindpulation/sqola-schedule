@@ -7,8 +7,12 @@ const Mongo = require('mongooo').Mongooo;
 
 const sec = require('../env/index');
 
-const mongo = new Mongo()
-const con = mongo.setup(sec.MONGO_URL, sec.MONGO_DB, sec.MONGO_COL)
+const mongo = new Mongo();
+let con;
+
+(async()=>{
+  con = await mongo.setup(sec.MONGO_URL, sec.MONGO_DB, sec.MONGO_COL);
+})();
 
 const getDataWithIdGuru = async (req, res) => {
   const param = req.body;

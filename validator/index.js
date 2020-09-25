@@ -1,4 +1,4 @@
-const {schemaFindListSchedule} = require('./schema');
+const {schemaFindListSchedule, schemaInsertSchedule} = require('./schema');
 
 const valList = (req, res, next) => {    
   const {value,error} = schemaFindListSchedule.validate(req.body)  
@@ -6,4 +6,9 @@ const valList = (req, res, next) => {
   else{res.send({res:"Salah Format"}).status(304);}
 }
 
-module.exports = {valList}
+const inList = (req,res,next) => {
+  const {value, error} = schemaInsertSchedule.validate(req.body);
+  (error === undefined) ? next() : res.send({res:"Salah Format"}).status(304);
+}
+
+module.exports = {valList, inList}
