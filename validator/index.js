@@ -1,7 +1,9 @@
-import { schemaFindListSchedule } from "./schema.js";
+const {schemaFindListSchedule} = require('./schema');
 
-export const valList = (req, res, next) => {    
+const valList = (req, res, next) => {    
   const {value,error} = schemaFindListSchedule.validate(req.body)  
   if(error === undefined){next();}
   else{res.send({res:"Salah Format"}).status(304);}
-} 
+}
+
+module.exports = {valList}

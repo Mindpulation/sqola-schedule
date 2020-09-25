@@ -1,7 +1,4 @@
-import env from 'dotenv';
-
+const env = require('dotenv');;
 env.config();
-
 const sec = process.env;
-
-export default sec;
+module.exports = sec;

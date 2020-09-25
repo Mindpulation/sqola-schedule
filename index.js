@@ -1,20 +1,21 @@
-import express from 'express';
-import http from 'http';
-import cors from 'cors';
+const express = require('express');
+const http = require('http');
+const cors = require('cors');
 
-import find from './view/find.js';
-import insert from './view/insert.js';
-import update from './view/update.js';
-import sec from './env/index.js';
+const sec = require('./env/index');
+
+const update = require('./view/update');
+const insert = require('./view/insert');
+const find = require('./view/find');
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
-app.use('/api/find', find);
-app.use('/api/insert', insert);
 app.use('/api/update', update);
+app.use('/api/insert', insert);
+app.use('/api/find', find);
 
 app.all("*", (req, res)=>{res.send({res:"Fuck you!"}).status(304)});
 

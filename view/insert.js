@@ -1,9 +1,8 @@
-import express from 'express';
+const { insertDataRoom } = require('../controller/mongo');
 
-import { insertDataRoom } from '../controller/mongo.js';
-
+const express = require('express');
 const app = express.Router();
 
 app.post('/', insertDataRoom);
 
-export default app;
+module.exports = app;

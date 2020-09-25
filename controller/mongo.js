@@ -1,27 +1,28 @@
-import { gzip } from 'mongooo/lib/compress/index.js';
-import { save } from 'mongooo/lib/mongo/insert.js';
-import { set } from 'mongooo/lib/mongo/update.js';
-import { find } from 'mongooo/lib/mongo/find.js';
-import Mongo from "mongooo/lib/mongo/index.js";
+const { gzip } = require('mongooo').Compress;
+const { set } = require('mongooo').Update;
+const { find } = require('mongooo').Find;
+const { save } = require('mongooo').Save;
 
-import sec from "../env/index.js";
+const Mongo = require('mongooo').Mongooo;
 
-const mongo = new Mongo();
+const sec = require('../env/index');
+
+const mongo = new Mongo()
 const con = mongo.setup(sec.MONGO_URL, sec.MONGO_DB, sec.MONGO_COL)
 
-export const getDataWithIdGuru = async (req, res) => {
+const getDataWithIdGuru = async (req, res) => {
   const param = req.body;
   const arr = await find(con, param);
   res.send(gzip(arr)).status(200);
 }
 
-export const insertDataRoom = async (req, res, next) => {
+const insertDataRoom = async (req, res) => {
   const {param} = req.body;
   const data = await save(con, param); 
   (data) ? res.send(data).status(200) : res.send({res:false}).status(304);
 }
 
-export const updateStatus = async (req, res, next) => {
+const updateStatus = async (req, res) => {
   const {idGuru} = req.params;
   const {param} = req.body;
   const data = await set(con, param, set, {
@@ -32,4 +33,6 @@ export const updateStatus = async (req, res, next) => {
 
   (data) ? res.send(data).status(200) : res.send({res:false}).status(304);
 }
+
+module.exports = {getDataWithIdGuru, insertDataRoom, updateStatus};
 

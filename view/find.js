@@ -1,10 +1,9 @@
-import { getDataWithIdGuru } from '../controller/mongo.js';
-import { valList } from '../validator/index.js';
-import express from 'express';
+const { getDataWithIdGuru } = require('../controller/mongo');
+const { valList } = require('../validator/index');
 
+const express = require('express');
 const app = express.Router();
 
 app.post('/idGuru', valList, getDataWithIdGuru);
 
-
-export default app;
+module.exports = app;

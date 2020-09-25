@@ -1,6 +1,8 @@
-import joi from 'joi';
+const joi = require('joi');
 
-export const schemaFindListSchedule = joi.object().keys({ 
+const schemaFindListSchedule = joi.object().keys({ 
   idGuru : joi.number().required(),
   sta : joi.boolean().required()
-})
+});
+
+module.exports = {schemaFindListSchedule}
