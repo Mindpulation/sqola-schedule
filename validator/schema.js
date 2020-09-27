@@ -11,4 +11,9 @@ const schemaInsertSchedule = joi.object().keys({
   member: joi.array().required()
 });
 
-module.exports = {schemaFindListSchedule, schemaInsertSchedule}
+const schemaUpdateSchedule = joi.object().keys({
+  find: joi.object().required(),
+  update: joi.object().required()
+})
+
+module.exports = {schemaFindListSchedule, schemaInsertSchedule, schemaUpdateSchedule}

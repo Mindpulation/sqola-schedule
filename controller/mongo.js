@@ -3,7 +3,7 @@ const { set } = require('mongooo').Update;
 const { find } = require('mongooo').Find;
 const { save } = require('mongooo').Save;
 
-const {objSchedule} = require('./helper');
+const { objSchedule } = require('./helper');
 const Mongo = require('mongooo').Mongooo;
 
 const sec = require('../env/index');
@@ -28,15 +28,9 @@ const insertDataRoom = async (req, res) => {
 }
 
 const updateStatus = async (req, res) => {
-  const {idGuru} = req.params;
-  const {param} = req.body;
-  const data = await set(con, param, set, {
-    "status": param
-  });
-
-  console.log(data);
-
-  (data) ? res.send(data).status(200) : res.send({res:false}).status(304);
+  const {find,update} = req.body;
+  const data = await set(con, find, update);
+  res.send({res:data}).status(200);
 }
 
 module.exports = {getDataWithIdGuru, insertDataRoom, updateStatus};
